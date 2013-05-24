@@ -1,3 +1,13 @@
+/* MobilLightLab Autoren:
+Joshua
+Lukas
+Jakob
+Julie
+
+
+
+*/
+
 import processing.serial.*;
 import controlP5.*;
 Serial myPort;
