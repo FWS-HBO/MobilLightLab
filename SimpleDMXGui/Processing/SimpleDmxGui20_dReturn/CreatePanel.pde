@@ -55,7 +55,7 @@ void createPanel(int maxReihen){
       if(i>7){ gruppenabstand=50;}else { gruppenabstand=0;}
       cp5.addSlider("Kanal "+n)
       .setPosition(REIHENABSTAND*i+REIHENRANDABSTAND+gruppenabstand,ZEILENABSTAND*j+ZEILENRANDABSTAND)
-      .setId(i+j*16)
+      .setId(n)
       .setSize(20 ,120)
       .setRange(0,255)
       .setNumberOfTickMarks(256)

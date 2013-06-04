@@ -1,28 +1,24 @@
-class Save {
+
+String save;  
+String [] savelist;  
   
+void savescene(){
   
+  save = "";
   
-  void Update(){
-    
-    
-    
-   
-   
-    
+  for(int i=0; i<32; i++){
+  save += str(saveBuffer[i])+" ";
   }
+  savelist=split(save,' ');
   
+  saveStrings("save.txt", savelist);
   
-  void draw(){
-    
-    
-    
-    
-    
-  }
+  save = "";
   
-  
-  
-  
-  
-  
+ text(save,100,100); 
 }
+
+
+
+  
+

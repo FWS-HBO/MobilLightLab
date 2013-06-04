@@ -15,7 +15,9 @@ import controlP5.*;
 Serial myPort;
 int[] sendBuffer=new int[512];    // als int wegen vorzeichenproblem ....
 byte[] recBuffer=new byte[512];
+int[] saveBuffer=new int[512];
 int j;
+
 
 boolean isPort=false, isAutoRepeat=false ; //flags für ports angeschlossen und automatisches senden
 
@@ -44,7 +46,7 @@ void draw(){
 void Send(int theValue) {       // cp5 eventroutine
   // an die COM senden          wenn send-button gedrückt frame/sendbuffer einmal senden
   sendDMXFrame();
-  
+  savescene();
 }
 
 void AutoRepeat(boolean theValue){  // wenn autorepead toggle betätigt zustand in flag speichern
@@ -100,7 +102,7 @@ public void controlEvent(ControlEvent theEvent) {   // cp5 evntroutine   änderu
   int val=(int)theEvent.getController().getValue();
   sendBuffer[id]=val;
   println("id: "+id+ " val: "+val);     // eventmeldung am monitor ausgeben
-  
+  saveBuffer[id]=val;
   }
 }
 
