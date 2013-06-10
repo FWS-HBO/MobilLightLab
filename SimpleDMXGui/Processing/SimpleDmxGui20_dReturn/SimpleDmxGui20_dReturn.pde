@@ -4,10 +4,6 @@ Lukas
 Jakob
 Julie
 
-srdtrhzjkklil
-
-
-
 */
 
 import processing.serial.*;
