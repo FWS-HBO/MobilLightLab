@@ -18,6 +18,7 @@ int j;
 boolean isPort=false, isAutoRepeat=false ; //flags für ports angeschlossen und automatisches senden
 
 void setup() {
+  
   size(1100,1000);
   noStroke();
   createPanel(2); //  aufruf der panel erstellung mit 2*16 slider
@@ -101,4 +102,7 @@ public void controlEvent(ControlEvent theEvent) {   // cp5 evntroutine   änderu
   saveBuffer[id]=val;
   }
 }
+
+
+
 

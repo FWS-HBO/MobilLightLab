@@ -53,7 +53,7 @@ void createPanel(int maxReihen){
     for(int i=0;i<16;i++){
       int n=j*16+i;
       if(i>7){ gruppenabstand=50;}else { gruppenabstand=0;}
-      cp5.addSlider("Kanal "+n)
+      cp5.addSlider("Kanal"+n)
       .setPosition(REIHENABSTAND*i+REIHENRANDABSTAND+gruppenabstand,ZEILENABSTAND*j+ZEILENRANDABSTAND)
       .setId(n)
       .setSize(20 ,120)
@@ -69,7 +69,7 @@ void createPanel(int maxReihen){
 cp5.addButton("Append").setId(602).setPosition(10,540);
 cp5.addButton("Insert").setId(602).setPosition(10,560);
 cp5.addButton("Remove").setId(602).setPosition(10,580);
-
+cp5.addButton("Load").setId(610).setPosition(10,600);
 
 cp5 = new ControlP5(this);
   SL = cp5.addListBox("sceneries")

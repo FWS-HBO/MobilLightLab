@@ -1,7 +1,7 @@
 
 String save;  
 String [] savelist;  
-  
+
 void savescene(){
   
   save = "";
@@ -19,6 +19,18 @@ void savescene(){
 }
 
 
+
+void Load(){
+  
+  
+  println("loaded");
+  
+  
+  cp5.getController("Kanal10").setValue(25);
+  
+  
+  
+}
 
   
 
