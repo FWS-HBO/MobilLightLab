@@ -2,6 +2,14 @@
 String save;  
 String [] savelist;  
 
+
+
+void Save(){
+  
+   savescene();
+   
+}
+
 void savescene(){
   
   save = "";
@@ -15,7 +23,7 @@ void savescene(){
   
   save = "";
   
- text(save,100,100); 
+ println("saved");
 }
 
 
@@ -24,11 +32,11 @@ void Load(){
   
   
   println("loaded");
+  String slider[] = loadStrings("save.txt");
+  for(int i=0; i<32; i++){
+  cp5.getController("Kanal"+i).setValue(int(slider[i]));
   
-  
-  cp5.getController("Kanal10").setValue(25);
-  
-  
+  }
   
 }
 

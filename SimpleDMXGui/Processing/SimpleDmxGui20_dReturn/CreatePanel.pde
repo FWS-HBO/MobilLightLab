@@ -7,6 +7,7 @@ final int sliderTicks1 = 100;
 final int sliderTicks2 = 30;
 
 void createPanel(int maxReihen){
+  cp5 = new ControlP5(this);
   final  int REIHENABSTAND=60,REIHENRANDABSTAND=40,ZEILENRANDABSTAND=200, ZEILENABSTAND=150;
   int gruppenabstand=0;
   cp5 = new ControlP5(this);
@@ -70,8 +71,9 @@ cp5.addButton("Append").setId(602).setPosition(10,540);
 cp5.addButton("Insert").setId(602).setPosition(10,560);
 cp5.addButton("Remove").setId(602).setPosition(10,580);
 cp5.addButton("Load").setId(610).setPosition(10,600);
+cp5.addButton("Save").setId(620).setPosition(10,620);
 
-cp5 = new ControlP5(this);
+
   SL = cp5.addListBox("sceneries")
          .setPosition(100, 520)
          .setSize(120, 120)

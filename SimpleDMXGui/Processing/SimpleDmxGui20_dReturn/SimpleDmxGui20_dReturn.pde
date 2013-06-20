@@ -43,7 +43,7 @@ void draw(){
 void Send(int theValue) {       // cp5 eventroutine
   // an die COM senden          wenn send-button gedrückt frame/sendbuffer einmal senden
   sendDMXFrame();
-  savescene();
+ 
 }
 
 void AutoRepeat(boolean theValue){  // wenn autorepead toggle betätigt zustand in flag speichern
