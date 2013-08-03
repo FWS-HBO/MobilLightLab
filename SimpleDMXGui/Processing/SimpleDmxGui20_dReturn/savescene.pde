@@ -46,12 +46,22 @@ void Load(){
 }
 
 void Next(){
-  
-     sceneselected=scenevalue;
-     scenevalue++;
+
+     sceneselected++;
+     
      filename = "save"+sceneselected+".txt";
      Load();
+     SL.setLabel("scene"+sceneselected);
+}
+
+void Previous(){
+  
+  sceneselected--;
      
+     if(sceneselected<0){sceneselected=0;}
+     filename = "save"+sceneselected+".txt";
+     Load();
+     SL.setLabel("scene"+sceneselected);
 }
 
 void Random(){

@@ -104,6 +104,7 @@ public void controlEvent(ControlEvent theEvent) {   // cp5 evntroutine   änderu
      
      filename = "save"+sceneselected+".txt";
      SL.setLabel("scene"+sceneselected);
+     Load();
    }
  
  else{

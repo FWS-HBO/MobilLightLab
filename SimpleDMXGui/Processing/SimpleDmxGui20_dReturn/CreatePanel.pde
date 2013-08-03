@@ -73,14 +73,13 @@ cp5.addButton("Insert").setId(602).setPosition(10,560);
 cp5.addButton("Remove").setId(602).setPosition(10,580);
 cp5.addButton("Load").setId(610).setPosition(10,600);
 cp5.addButton("Save").setId(620).setPosition(10,620);
-cp5.addButton("Next").setId(600).setPosition(10,640);
-cp5.addButton("Random").setId(600).setPosition(10,660);
+cp5.addButton("Random").setId(600).setPosition(950,500);
 
 
   SL = cp5.addListBox("sceneries")
          .setPosition(100, 520)
-         .setSize(120, 120)
-         .setItemHeight(15)
+         .setSize(120, 140)
+         .setItemHeight(20)
          .setBarHeight(15)
          .setColorBackground(color(255, 128))
          .setColorActive(color(0))
@@ -93,7 +92,7 @@ cp5.addButton("Random").setId(600).setPosition(10,660);
   SL.captionLabel().style().marginTop = 3;
   SL.valueLabel().style().marginTop = 3;
   
-  for (int i=0;i<80;i++) {
+  for (int i=0;i<10;i++) {
     ListBoxItem lbi = SL.addItem("scene "+i, i);
     lbi.setColorBackground(0xffff0000);
   }      
