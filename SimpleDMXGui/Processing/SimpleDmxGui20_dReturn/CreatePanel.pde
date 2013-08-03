@@ -12,6 +12,7 @@ void createPanel(int maxReihen){
   int gruppenabstand=0;
   cp5 = new ControlP5(this);
   cp5.addButton("Send").setId(600).setPosition(10,10);
+   
   cp5.addToggle("AutoRepeat").setId(601).setPosition(10,40)
     .setSize(50,10)
     .setValue(true)
@@ -72,6 +73,8 @@ cp5.addButton("Insert").setId(602).setPosition(10,560);
 cp5.addButton("Remove").setId(602).setPosition(10,580);
 cp5.addButton("Load").setId(610).setPosition(10,600);
 cp5.addButton("Save").setId(620).setPosition(10,620);
+cp5.addButton("Next").setId(600).setPosition(10,640);
+cp5.addButton("Random").setId(600).setPosition(10,660);
 
 
   SL = cp5.addListBox("sceneries")
@@ -85,7 +88,7 @@ cp5.addButton("Save").setId(620).setPosition(10,620);
          ;
 
   SL.captionLabel().toUpperCase(true);
-  SL.captionLabel().set("A Listbox");
+  SL.captionLabel().set("select scene");
   SL.captionLabel().setColor(0xffff0000);
   SL.captionLabel().style().marginTop = 3;
   SL.valueLabel().style().marginTop = 3;

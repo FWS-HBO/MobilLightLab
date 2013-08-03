@@ -13,6 +13,9 @@ int[] sendBuffer=new int[512];    // als int wegen vorzeichenproblem ....
 byte[] recBuffer=new byte[512];
 int[] saveBuffer=new int[512];
 int j;
+int sceneselected;
+String filename ="0";
+int scenevalue;
 
 
 boolean isPort=false, isAutoRepeat=false ; //flags für ports angeschlossen und automatisches senden
@@ -48,7 +51,7 @@ void Send(int theValue) {       // cp5 eventroutine
 
 void AutoRepeat(boolean theValue){  // wenn autorepead toggle betätigt zustand in flag speichern
   isAutoRepeat=theValue;
-  println("isAutoRepeat: "+ isAutoRepeat);
+ println("isAutoRepeat: "+ isAutoRepeat);
 }
 
 void sendDMXFrame(){     // sendbuffer inhalte an serielle schnittstelle senden
@@ -68,7 +71,7 @@ void display(int k){
   if (k==1){
   String s="send: " + "\n";
      for(int i=0; i<31;i++){
-       print(sendBuffer[i]+" ");
+     //  print(sendBuffer[i]+" "); /////////////////////////
        s += str(sendBuffer[i])+", ";
      }   
        SendText.setText(s);       
@@ -94,13 +97,26 @@ void receiveResponse(){  //überprüfung ob eine anforderungsrückmeldung anlieg
 }
 
 public void controlEvent(ControlEvent theEvent) {   // cp5 evntroutine   änderungen an den slidern in den sendebuffer schreiben
+ 
+    if (theEvent.isGroup() && theEvent.name().equals("sceneries")) {
+     sceneselected = (int)theEvent.group().value();
+     println("scene="+sceneselected);
+     
+     filename = "save"+sceneselected+".txt";
+     SL.setLabel("scene"+sceneselected);
+   }
+ 
+ else{
   int id=theEvent.getId();
   if (id<32){
   int val=(int)theEvent.getController().getValue();
   sendBuffer[id]=val;
   println("id: "+id+ " val: "+val);     // eventmeldung am monitor ausgeben
   saveBuffer[id]=val;
+ 
   }
+  
+ }
 }
 
 
